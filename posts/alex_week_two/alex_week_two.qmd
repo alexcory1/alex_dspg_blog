@@ -3,6 +3,7 @@ title: "Week Two Blog"
 author: "Alex Cory"
 dat: "2023-05-23"
 category: "Week Two"
+categories: ["Week Two"]
 ---
 
 # Map of languages spoken in Iowa, by language
