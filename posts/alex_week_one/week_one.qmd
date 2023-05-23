@@ -1,0 +1,16 @@
+---
+title: "Week One Blog"
+author: "Alex Cory"
+dat: "2023-05-23"
+category: "Week One"
+---
+
+# Test
+
+```{r, warning=FALSE}
+```
+
+
+```{r}
+
+```
