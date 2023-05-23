@@ -1,0 +1,16 @@
+{
+  "hash": "f89502ad314c998069d37b4f58766ccc",
+  "result": {
+    "markdown": "---\ntitle: \"Week Two Blog\"\nauthor: \"Alex Cory\"\ndat: \"2023-05-23\"\ncategory: \"Week Two\"\n---\n\n\n# Map of languages spoken in Iowa, by language\n\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlang_map <- iowa_lang %>%\n  ggplot(aes(fill = log(estimate))) + \n  theme(axis.text.x=element_blank(), #remove x axis labels\n        axis.ticks.x=element_blank(), #remove x axis ticks\n        axis.text.y=element_blank(),  #remove y axis labels\n        axis.ticks.y=element_blank()  #remove y axis ticks\n        ) +\n    labs(title = \"Languages by County in Iowa\") +\n  geom_sf(color = NA) + \n  facet_wrap(~variable) +\n  scale_fill_viridis_c(option = \"E\") \nlang_map\n```\n\n::: {.cell-output-display}\n![](alex_week_two_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\niowa_income %>%\n  ggplot(aes(fill = estimate)) + \n  theme(axis.text.x=element_blank(), #remove x axis labels\n        axis.ticks.x=element_blank(), #remove x axis ticks\n        axis.text.y=element_blank(),  #remove y axis labels\n        axis.ticks.y=element_blank()  #remove y axis ticks\n        ) +\n  labs(title = \"Income by Tract\") +\n  geom_sf(color = NA) + \n  facet_wrap(~variable) +\n  scale_fill_viridis_c(option = \"E\") \n```\n\n::: {.cell-output-display}\n![](alex_week_two_files/figure-html/unnamed-chunk-5-1.png){width=672}\n:::\n:::\n\n# Mean Age by County\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\niowa_ages_by_gender %>%\n  ggplot(aes(fill = estimate)) + \n  theme(axis.text.x=element_blank(), #remove x axis labels\n        axis.ticks.x=element_blank(), #remove x axis ticks\n        axis.text.y=element_blank(),  #remove y axis labels\n        axis.ticks.y=element_blank()  #remove y axis ticks\n        ) +\n  labs(title = \"Average Age by County\") +\n  geom_sf(color = NA) + \n  facet_wrap(~variable) +\n  scale_fill_viridis_c(option = \"E\") \n```\n\n::: {.cell-output-display}\n![](alex_week_two_files/figure-html/unnamed-chunk-7-1.png){width=672}\n:::\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\niowa_ages_by_gender %>%\n  ggplot(aes(fill = estimate)) + \n  theme(axis.text.x=element_blank(), #remove x axis labels\n        axis.ticks.x=element_blank(), #remove x axis ticks\n        axis.text.y=element_blank(),  #remove y axis labels\n        axis.ticks.y=element_blank()  #remove y axis ticks\n        ) +\n  labs(title = \"Average Age by Tract (Male and Female)\") +\n  geom_sf(color = NA) + \n  facet_wrap(~variable) +\n  scale_fill_viridis_c(option = \"E\") \n```\n\n::: {.cell-output-display}\n![](alex_week_two_files/figure-html/unnamed-chunk-9-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "alex_week_two_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

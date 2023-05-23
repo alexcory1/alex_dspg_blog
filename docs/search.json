@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "alex_dspg_blog",
     "section": "",
-    "text": "Week One Blog\n\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMay 23, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nMay 20, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Week One Blog\n\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nWeek Two Blog\n\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -33,5 +33,12 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "posts/alex_week_two/alex_week_two.html",
+    "href": "posts/alex_week_two/alex_week_two.html",
+    "title": "Week Two Blog",
+    "section": "",
+    "text": "Map of languages spoken in Iowa, by language\n\nlang_map <- iowa_lang %>%\n  ggplot(aes(fill = log(estimate))) + \n  theme(axis.text.x=element_blank(), #remove x axis labels\n        axis.ticks.x=element_blank(), #remove x axis ticks\n        axis.text.y=element_blank(),  #remove y axis labels\n        axis.ticks.y=element_blank()  #remove y axis ticks\n        ) +\n    labs(title = \"Languages by County in Iowa\") +\n  geom_sf(color = NA) + \n  facet_wrap(~variable) +\n  scale_fill_viridis_c(option = \"E\") \nlang_map\n\n\n\n\n\niowa_income %>%\n  ggplot(aes(fill = estimate)) + \n  theme(axis.text.x=element_blank(), #remove x axis labels\n        axis.ticks.x=element_blank(), #remove x axis ticks\n        axis.text.y=element_blank(),  #remove y axis labels\n        axis.ticks.y=element_blank()  #remove y axis ticks\n        ) +\n  labs(title = \"Income by Tract\") +\n  geom_sf(color = NA) + \n  facet_wrap(~variable) +\n  scale_fill_viridis_c(option = \"E\") \n\n\n\n\n\n\nMean Age by County\n\niowa_ages_by_gender %>%\n  ggplot(aes(fill = estimate)) + \n  theme(axis.text.x=element_blank(), #remove x axis labels\n        axis.ticks.x=element_blank(), #remove x axis ticks\n        axis.text.y=element_blank(),  #remove y axis labels\n        axis.ticks.y=element_blank()  #remove y axis ticks\n        ) +\n  labs(title = \"Average Age by County\") +\n  geom_sf(color = NA) + \n  facet_wrap(~variable) +\n  scale_fill_viridis_c(option = \"E\") \n\n\n\n\n\niowa_ages_by_gender %>%\n  ggplot(aes(fill = estimate)) + \n  theme(axis.text.x=element_blank(), #remove x axis labels\n        axis.ticks.x=element_blank(), #remove x axis ticks\n        axis.text.y=element_blank(),  #remove y axis labels\n        axis.ticks.y=element_blank()  #remove y axis ticks\n        ) +\n  labs(title = \"Average Age by Tract (Male and Female)\") +\n  geom_sf(color = NA) + \n  facet_wrap(~variable) +\n  scale_fill_viridis_c(option = \"E\")"
   }
 ]
