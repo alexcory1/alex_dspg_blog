@@ -1,0 +1,336 @@
+---
+title: "Rural Grocery Weekly Wrap Up"
+author: "Alex Cory"
+date: "2023-05-24"
+categories: "Week Two"
+---
+
+
+## Current Project Objectives
+
+
+-   Gather Data
+-   Start making basic visualizations
+-   Data Camp
+
+## Works in Progress
+
+```{r, warning=FALSE, include=FALSE}
+library(tidycensus)
+library(tidyverse)
+library(dplyr)
+library(stringr)
+library(patchwork)
+```
+# Alex
+```{r include=FALSE}
+
+
+langList_noEng = c("Spanish" = "C16001_003",   "French" = "C16001_006",   "German" = "C16001_009",   "Slavic languages" = "C16001_012",   "Other Indo-European" = "C16001_015",   "Korean" = "C16001_018",   "Chinese " = "C16001_021",   "Vietnamese" = "C16001_024",   "Tagalog" = "C16001_027",   "Asian/Pacific Island" = "C16001_030",   "Arabic" = "C16001_033",   "Other" = "C16001_036" )
+
+
+iowa_lang <- get_acs(
+  state = "IA",
+  geography = "county",
+  variables = langList_noEng,
+  geometry = TRUE,
+)
+
+```
+```{r}
+lang_map <- iowa_lang %>%
+  ggplot(aes(fill = log(estimate))) + 
+  theme(axis.text.x=element_blank(), #remove x axis labels
+        axis.ticks.x=element_blank(), #remove x axis ticks
+        axis.text.y=element_blank(),  #remove y axis labels
+        axis.ticks.y=element_blank()  #remove y axis ticks
+        ) +
+    labs(title = "Languages by County in Iowa") +
+  geom_sf(color = NA) + 
+  facet_wrap(~variable) +
+  scale_fill_viridis_c(option = "E") 
+lang_map
+```
+> This map shows what languages are spoken in each county. We can see that Spanish is by far the most popular non-English language spoken in Iowa, and most counties had very little diversity in languages.
+
+```{r, include=FALSE}
+iowa_income <- get_acs(
+  state = "IA",
+  geography = "tract",
+  variables = "B06011_001",
+  geometry = TRUE,
+)
+```
+```{r}
+iowa_income %>%
+  ggplot(aes(fill = estimate)) + 
+  theme(axis.text.x=element_blank(), #remove x axis labels
+        axis.ticks.x=element_blank(), #remove x axis ticks
+        axis.text.y=element_blank(),  #remove y axis labels
+        axis.ticks.y=element_blank()  #remove y axis ticks
+        ) +
+  labs(title = "Income by Tract") +
+  geom_sf(color = NA) + 
+  facet_wrap(~variable) +
+  scale_fill_viridis_c(option = "E") 
+```
+> This map shows the average income by tract. We can see that Des Moines and the other major Metropolitan areas have significantly higher incomes than rural areas.
+
+
+```{r, include=FALSE}
+age_by_gender = c("Female"="B01002_003","Male"="B01002_002", "Both"="B01002_001")
+
+iowa_ages_by_gender <- get_acs(
+  state = "IA",
+  geography = "county",
+  variables = age_by_gender,
+  geometry = TRUE,
+)
+```
+
+
+```{r}
+iowa_ages_by_gender %>%
+  ggplot(aes(fill = estimate)) + 
+  theme(axis.text.x=element_blank(), #remove x axis labels
+        axis.ticks.x=element_blank(), #remove x axis ticks
+        axis.text.y=element_blank(),  #remove y axis labels
+        axis.ticks.y=element_blank()  #remove y axis ticks
+        ) +
+  labs(title = "Average Age by County") +
+  geom_sf(color = NA) + 
+  facet_wrap(~variable) +
+  scale_fill_viridis_c(option = "E") 
+```
+> This map shows the ages by county, broken down by gender. Des Moines is significantly younger than the rest of Iowa. We also see a line near the Western border where people have an abnormally old age.
+
+```{r, include=FALSE}
+iowa_ages_by_gender <- get_acs(
+  state = "IA",
+  geography = "tract",
+  variables = "B01002_001",
+  geometry = TRUE,
+)
+```
+```{r}
+iowa_ages_by_gender %>%
+  ggplot(aes(fill = estimate)) + 
+  theme(axis.text.x=element_blank(), #remove x axis labels
+        axis.ticks.x=element_blank(), #remove x axis ticks
+        axis.text.y=element_blank(),  #remove y axis labels
+        axis.ticks.y=element_blank()  #remove y axis ticks
+        ) +
+  labs(title = "Average Age by Tract (Male and Female)") +
+  geom_sf(color = NA) + 
+  facet_wrap(~variable) +
+  scale_fill_viridis_c(option = "E") 
+```
+> This map shows the age by tract, for both men and women.
+
+
+
+# Srika
+```{r, include=FALSE}
+grad_education<- get_acs(
+geography = "county",
+variables = "DP02_0066P",
+year = 2021,
+survey = "acs1" #<<
+
+)
+```
+```{r}
+
+grad_education_Iowa <- grad_education%>%
+separate(NAME, into = c("county", "state"), sep = ", ") %>%
+filter(state == "Iowa") %>%
+arrange(desc(estimate))
+
+ggplot(grad_education_Iowa, aes(x = estimate,
+y = reorder(county, estimate))) +
+geom_errorbar(aes(xmin = estimate - moe, xmax = estimate + moe),
+width = 0.5, linewidth = 0.5) +
+labs(title = "% Graduate level education for different counties in Iowa",
+x = "ACS estimate in %",
+y = "")+
+geom_point(size = 1)
+```
+```{r,include=FALSE}
+
+library(plotly)
+ggplotly(tooltip = "x")
+
+
+```
+>This graph shows graduate education by county.
+
+# Aaron
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Language Plot (ACS5 2021):
+```{r, include=FALSE}
+# List of language variables (provided by Chris Seeger)
+
+langList = c("Speak only English" = "C16001_002",   "Spanish" = "C16001_003",   "French, Haitian, or Cajun" = "C16001_006",   "German or other West Germanic languages" = "C16001_009",   "Russian, Polish, or other Slavic languages" = "C16001_012",   "Other Indo-European languages" = "C16001_015",   "Korean" = "C16001_018",   "Chinese (incl. Mandarin, Cantonese)" = "C16001_021",   "Vietnamese" = "C16001_024",   "Tagalog (incl. Filipino)" = "C16001_027",   "Other Asian and Pacific Island languages" = "C16001_030",   "Arabic" = "C16001_033",   "Other and unspecified languages" = "C16001_036")
+
+#API Call
+
+lang <- get_acs(geography = "county",
+                       variables = langList,
+                       state = "IA",
+                       year = 2021,
+                       survey = "acs5")
+
+# Subsetting data with string detection
+
+lang_counties <- lang %>%
+  filter(str_detect(NAME, "Buchanan|Chickasaw|Grundy|Story"))
+```
+
+```{r}
+# Plots
+plot_1 <- lang_counties %>%
+  ggplot(aes(x = NAME, y = estimate, fill = variable)) + 
+  geom_bar(stat = "identity", position = "fill") + 
+  xlab("County") +
+  ylab("Languages") +
+  coord_flip()
+
+plot_2 <- lang_counties %>%
+  filter(variable != "Speak only English") %>%
+  ggplot(aes(x = NAME, y = estimate, fill = variable)) + 
+  geom_bar(stat = "identity", position = "fill") + 
+  xlab("County") +
+  ylab("Language (Other Than English)") +
+  coord_flip()
+
+plot_1 
+```
+
+> This plot shows the distribution of languages spoken in the four counties with English included.
+
+```{r}
+plot_2
+```
+
+> This plot shows the language distribution excluding English. There is a great degree of variation from county to county in regards to the distribution of spoken languages other than English (which comprises a vast majority in all of the counties).
+
+## Vacancy Plot (Decennial, 2020):
+
+```{r, include=FALSE}
+#Vacancy for county
+
+Counties_Occupancy <- get_decennial(
+  geography = "county",
+  year = 2020,
+  state = "IA",
+  variables = c(vacant_households = "H1_003N",
+                total_households = "H1_001N"),
+  output = "wide"
+)
+
+Iowa_Counties <- Counties_Occupancy %>%
+  filter(GEOID %in% c(19019, 19037, 19075, 19169))
+
+
+```
+
+```{r, include=FALSE}
+#Vacancy for cities
+
+Cities_Occupancy <- get_decennial(
+  geography = "place",
+  year = 2020,
+  state = "IA",
+  variables = c(vacant_households = "H1_003N",
+                total_households = "H1_001N"),
+  output = "wide"
+)
+
+Iowa_Cities <- Cities_Occupancy %>%
+  filter(GEOID %in% c("1938100", "1956100", "1933195", "1973515"))
+
+# Combine
+
+Iowa_Places <- rbind(Iowa_Cities, Iowa_Counties)
+```
+
+```{r,include=FALSE}
+# Adding percent columns
+
+Iowa_Places <- Iowa_Places %>%
+  mutate(percent = 100 * vacant_households/total_households,
+         occupied_percent = 100 - percent)
+
+Iowa_Places <- Iowa_Places %>%
+  mutate(total_percent = 100)
+```
+
+```{r}
+Iowa_Places %>%
+  ggplot(aes(x = NAME)) +
+  geom_col(aes(y = total_percent, fill = "Occupied"), width = 0.8) + 
+  geom_col(aes(y = percent, fill = "Vacant"), width = 0.8) +
+  coord_flip()
+```
+
+> This is a graph representing the percentage of vacant housing units per location for both the counties and their respective cities. Slater City has the lowest percentage of vacancies while New Hampton City has the highest.
+
+## Mode of Transport Plot (ACS5, 2021):
+
+```{r, include=FALSE}
+# Compiled variable list for mode of transport
+transportList = c("Automobile" = "B08006_002","Bus" = "B08006_009", "Subway/Elevated Rail" = "B08006_010", "Train" = "B08006_011","Light Rail" = "B08006_012","Ferryboat" = "B08006_013", "Bicycle" = "B08006_014","Walked" = "B08006_015", "Taxi/Motorcycle/Other" = "B08006_016")
+
+# API Call
+
+transport_counties <- get_acs(geography = "tract",
+                       variables = transportList,
+                       state = "IA",
+                       year = 2021,
+                       survey = "acs5")
+
+# Subset for relevant counties using str_detect()
+transport_counties2 <- transport_counties %>%
+  filter(str_detect(NAME, "Buchanan|Chickasaw|Grundy|Story"))
+
+# Mutating 'county' column and labeling for each tract observation
+transport_small <- transport_counties2 %>%
+  mutate(county = ifelse(str_detect(NAME, "Buchanan"), "Buchanan County",
+                    ifelse(str_detect(NAME, "Chickasaw"), "Chickasaw County",
+                      ifelse(str_detect(NAME, "Grundy"), "Grundy County", "Story County"))))
+```
+
+```{r}
+plot_1 <- transport_small %>%
+  ggplot(aes(fill = variable, x = county, y = estimate)) +
+  geom_bar(stat = "identity", position = "fill") +
+  coord_flip() + 
+  ggtitle("Mode of Transport to Work")
+
+plot_2 <- transport_small %>%
+  filter(variable != "Automobile") %>%
+  ggplot(aes(fill = variable, x = county, y = estimate)) +
+  geom_bar(stat = "identity", position = "fill") +
+  coord_flip() +
+  ggtitle("Mode of Transport to Work (Other than Automobile)")
+
+plot_1
+```
+
+> This is a plot of the reported mode of transport to work for each of the 4 counties. Commute by automobile overwhelmingly predominates.
+
+```{r}
+plot_2
+```
+
+> This is a plot of the reported mode of transport for each county with automobile excluded. In two of the counties, "walking" is the majority response.
+
+
+## DSPG Questions
+
