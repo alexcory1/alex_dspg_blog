@@ -7,13 +7,16 @@ categories: "Week Two"
 
 
 ## Current Project Objectives
-
-
 -   Gather Data
 -   Start making basic visualizations
 -   Data Camp
+-   Researched project
 
 ## Works in Progress
+
+This week we practiced using the Tinycensus package, and we looked into data that we found interesting, but the data could be used in our final project.
+
+This week we looked at where non-English languages are spoken, which can show if we would need to staff stores with speakers of other languages. We looked at income to see if stores need to prioritize competitive pricing in certain counties.
 
 ```{r, warning=FALSE, include=FALSE}
 library(tidycensus)

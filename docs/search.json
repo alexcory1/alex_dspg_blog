@@ -46,7 +46,7 @@
     "href": "posts/grocery_week_two/Week_Two_Wrap_Up.html",
     "title": "Rural Grocery Weekly Wrap Up",
     "section": "",
-    "text": "Gather Data\nStart making basic visualizations\nData Camp"
+    "text": "Gather Data\nStart making basic visualizations\nData Camp\nResearched project"
   },
   {
     "objectID": "posts/grocery_week_two/Week_Two_Wrap_Up.html#current-project-objectives",
@@ -60,14 +60,14 @@
     "href": "posts/grocery_week_two/Week_Two_Wrap_Up.html#works-in-progress",
     "title": "Rural Grocery Weekly Wrap Up",
     "section": "Works in Progress",
-    "text": "Works in Progress"
+    "text": "Works in Progress\nThis week we practiced using the Tinycensus package, and we looked into data that we found interesting, but the data could be used in our final project.\nThis week we looked at where non-English languages are spoken, which can show if we would need to staff stores with speakers of other languages. We looked at income to see if stores need to prioritize competitive pricing in certain counties."
   },
   {
     "objectID": "posts/grocery_week_two/Week_Two_Wrap_Up.html#dspg-questions",
     "href": "posts/grocery_week_two/Week_Two_Wrap_Up.html#dspg-questions",
     "title": "Rural Grocery Weekly Wrap Up",
     "section": "DSPG Questions",
-    "text": "DSPG Questions\nTreat this section as a place to put all of the different questions that team members have about the work they’ve been completing so far. This can be things like;\n\nHow to best create a certain plot.\nWhat package/module might be the best fit for the task.\nAn idea that can be discussed with the larger group for additional thoughts."
+    "text": "DSPG Questions"
   },
   {
     "objectID": "posts/grocery_week_two/Week_Two_Wrap_Up.html#this-map-shows-what-languages-are-spoken-in-each-county",
