@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "alex_dspg_blog",
     "section": "",
-    "text": "Week One Blog\n\n\n\n\n\n\n\nWeek One\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nWeek Two Blog\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nRural Grocery Weekly Wrap Up\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 24, 2023\n\n\nAlex Cory\n\n\n\n\n\n\nNo matching items"
+    "text": "Week Three Blog\n\n\n\n\n\n\n\nWeek Three\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nWeek One Blog\n\n\n\n\n\n\n\nWeek One\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nWeek Two Blog\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nRural Grocery Weekly Wrap Up\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 24, 2023\n\n\nAlex Cory\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -124,5 +124,12 @@
     "title": "Rural Grocery Weekly Wrap Up",
     "section": "Mode of Transport Plot (ACS5, 2021):",
     "text": "Mode of Transport Plot (ACS5, 2021):\n\nplot_1 <- transport_small %>%\n  ggplot(aes(fill = variable, x = county, y = estimate)) +\n  geom_bar(stat = \"identity\", position = \"fill\") +\n  coord_flip() + \n  ggtitle(\"Mode of Transport to Work\")\n\nplot_2 <- transport_small %>%\n  filter(variable != \"Automobile\") %>%\n  ggplot(aes(fill = variable, x = county, y = estimate)) +\n  geom_bar(stat = \"identity\", position = \"fill\") +\n  coord_flip() +\n  ggtitle(\"Mode of Transport to Work (Other than Automobile)\")\n\nplot_1\n\n\n\n\n\nThis is a plot of the reported mode of transport to work for each of the 4 counties. Commute by automobile overwhelmingly predominates.\n\n\nplot_2\n\n\n\n\n\nThis is a plot of the reported mode of transport for each county with automobile excluded. In two of the counties, “walking” is the majority response."
+  },
+  {
+    "objectID": "posts/alex_week_three/alex_week_three.html",
+    "href": "posts/alex_week_three/alex_week_three.html",
+    "title": "Week Three Blog",
+    "section": "",
+    "text": "Data Exploration\nI spent a lot of time this week doing data exploration. I found the USDA food atlas data set, as well as the Economic Census data. I also explored the TinyUSDA package.\n\n\nClient Meeting\nThis week I met with our clients, where we clarified the scope of the project, discussed the goals moving forwards, and shared our progress. I shared about the USDA food atlas and Economic Census data sets\n\n\nSQL learning\nThis week I spent time learning PostgreSQL on DataCamp. I also did several other courses related to data visualizations and fundamental statistical skills."
   }
 ]
