@@ -102,7 +102,6 @@ block_table <- get_census_geos(-93, 42)
 knitr::kable(block_table, )
 ```
 
-![](images/output_of_get_census_geos_aaron.png)
 
 # Srika
 
