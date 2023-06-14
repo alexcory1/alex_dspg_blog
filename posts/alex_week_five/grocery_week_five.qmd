@@ -1,19 +1,25 @@
 ---
-title: "Grocery Week Five Blog"
+title: "Grocery Team Week Five Wrap Up"
 author: "Alex Cory"
-date: "2023-06-1"
-categories: ["Week Five"]
+date: "2023-06-15"
+categories: ["Week Five", "Grocery Team"]
 ---
 
 # Voronoi Diagrams
 
+![](images/440px-Voronoi_growth_euclidean.gif)
+
 ```{r, include=FALSE}
-library('googleway')
+library(googleway)
 library(ggmap)
 library(ggplot2)
 library(sf)
 library(dplyr)
 library(ggvoronoi)
+library(tigris)
+library(revgeo)
+library(DT)
+library(htmlwidgets)
 key <- Sys.getenv("GOOGLE_KEY")
 set_key(key = key)
 
@@ -24,8 +30,125 @@ spatial_results <- results %>%
   transmute(name = name, lat = geometry$location$lat, lng = geometry$location$lng)
 
 ```
+
 ```{r}
 ggplot(spatial_results, aes(lat, lng)) +
   stat_voronoi(geom = "path") +
   geom_point(mapping = aes(lat, lng))
+```
+
+# Determining Market Size
+
+We looked into the economic methods for evaluating market size. Two metrics we looked into were Reilly's Law of Gravitation and Trade Area Capture. Reilly's law is based on the idea people will tend to shop in areas with a higher population, and the model is based on a ratio between distance and population. Trade area capture uses historical data and income in areas to give a prediction of actual numbers of people who shop in an area.
+
+# Aaron
+
+This week Aaron worked on creating a function that takes latitude and longitude as inputs and outputs the corresponding Census geographies. So far, we have two: one that's simple and one that is more complex. We are currently working on adjusting them and improving their performance, as well as figuring out how this function fits into the full patchwork of functions for our tool.
+
+```{r}
+get_census_geos <- function(longitude, latitude) {
+  
+  API_KEY <- Sys.getenv("GOOGLE_KEY")
+  
+  address <- revgeo::revgeo(longitude = longitude, latitude = latitude, 
+                            provider = 'google', output = "frame",
+                            API = API_KEY)
+  
+  city <- address$city
+  
+  state <- address$state
+  
+  state_ab <- state.abb[match(state,state.name)]
+
+  
+  # set options
+  options(tigris_class = "sf") # use sf objects
+  
+  options(tigris_use_cache = TRUE) # cache downloaded files
+  
+  # get shapefiles for places in state
+  places <- tigris::places(state = state_ab, cb = TRUE)
+  
+  # get shapefiles for counties in state
+  counties <- tigris::counties(state = state_ab, cb = TRUE)
+  
+  # join places with counties with st_join
+  city_county <- sf::st_join(places, counties, join = sf::st_within)
+  
+  # filter places by city name
+  city_county_frame <- city_county |> dplyr::filter(NAME.x == city) |> dplyr::select(NAMELSAD.y)
+  
+  county <- city_county_frame$NAMELSAD.y[1]
+  
+
+  # county passed to TidyCensus
+  
+  census <- tidycensus::get_decennial(
+    geography = "block", 
+    variables = "P2_002N",
+    county = county,
+    state = state_ab,
+    year = 2020,
+    geometry = TRUE)
+  
+  
+  census
+}
+
+
+```
+```{r}
+block_table <- get_census_geos(-93, 42)
+knitr::kable(block_table, )
+```
+
+![](images/output_of_get_census_geos_aaron.png)
+
+# Srika
+
+# Harun
+
+```{r}
+
+places_multiloc_pull <- function(df, name = NULL, 
+                                 search_string = NULL, 
+                                 keyword = NULL, 
+                                 lat = c(df[,2]),
+                                 lng = df[,3],
+                                 radius = 6500, 
+                                 type = NULL, 
+                                 api_key = Sys.getenv("PLACES_KEY"), 
+                                 place_type = NULL) {
+  
+  result_list <- list()
+  
+  for (i in 1:dim(test_cities)[1]) {
+    
+    start_time <- Sys.time()
+    
+    string <- sprintf("df_%f", i)
+    
+    spring <- noquote(string) 
+    
+    spring <- googleway::google_places(search_string = search_string, 
+                                   name = name, 
+                                   location = c(lat[i], lng[i]), 
+                                   radius = radius, 
+                                   keyword = keyword, 
+                                   key = api_key)
+    
+    
+    Sys.sleep(2)
+    
+    result_list <- append(result_list, list(spring$results))
+    
+    end_time <- Sys.time()
+    total_time <- end_time - start_time
+    print(sprintf("Execution time for iteration %d is %.2f", i, total_time))
+  }
+  
+  return(result_list)
+  
+}
+
 ```

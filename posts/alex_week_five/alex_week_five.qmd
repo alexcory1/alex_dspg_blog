@@ -1,13 +1,13 @@
 ---
 title: "Week Five Blog"
 author: "Alex Cory"
-date: "2023-06-1"
+date: "2023-06-13"
 categories: ["Week Five"]
 ---
 
 # Week Five
-This Week I spent time researching ways to determine market area. I realized the quarter circle formula was inaccurate for determining market size. I started off learning about Voronoi polygons. After learning about that as a way of finding geographic area, I read sections out of two books, Community Economics by Ron Shaffer and Community Economic Analysis. These had information about something called Reilly's Law of Gravitation. This is an important metric to consider because it can give an estimation of the reach of grocery stores, and how many people are in the area.
 
+This Week I spent time researching ways to determine market area. I realized the quarter circle formula was inaccurate for determining market size. I started off learning about Voronoi polygons. After learning about that as a way of finding geographic area, I read sections out of two books, Community Economics by Ron Shaffer and Community Economic Analysis. These had information about something called Reilly's Law of Gravitation. This is an important metric to consider because it can give an estimation of the reach of grocery stores, and how many people are in the area.
 
 # Voronoi Diagrams
 
@@ -28,6 +28,7 @@ spatial_results <- results %>%
   transmute(name = name, lat = geometry$location$lat, lng = geometry$location$lng)
 
 ```
+
 ```{r}
 ggplot(spatial_results, aes(lat, lng)) +
   stat_voronoi(geom = "path") +
