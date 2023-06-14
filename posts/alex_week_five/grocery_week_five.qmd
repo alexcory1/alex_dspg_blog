@@ -97,7 +97,7 @@ get_census_geos <- function(longitude, latitude) {
 
 
 ```
-```{r}
+```{r, message=FALSE, warning= FALSE}
 block_table <- get_census_geos(-93, 42)
 knitr::kable(block_table[1:5,] )
 ```
