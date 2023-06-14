@@ -1,0 +1,31 @@
+---
+title: "Grocery Week Five Blog"
+author: "Alex Cory"
+date: "2023-06-1"
+categories: ["Week Five"]
+---
+
+# Voronoi Diagrams
+
+```{r, include=FALSE}
+library('googleway')
+library(ggmap)
+library(ggplot2)
+library(sf)
+library(dplyr)
+library(ggvoronoi)
+key <- Sys.getenv("GOOGLE_KEY")
+set_key(key = key)
+
+ames_dollar_stores <- google_places(search_string = "dollar", location = c(42.034534, -93.620369), radius = 6500, keyword = "store")
+results <- ames_dollar_stores$results
+
+spatial_results <- results %>% 
+  transmute(name = name, lat = geometry$location$lat, lng = geometry$location$lng)
+
+```
+```{r}
+ggplot(spatial_results, aes(lat, lng)) +
+  stat_voronoi(geom = "path") +
+  geom_point(mapping = aes(lat, lng))
+```

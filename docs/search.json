@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "alex_dspg_blog",
     "section": "",
-    "text": "Week Three Blog\n\n\n\n\n\n\n\nWeek Three\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nWeek One Blog\n\n\n\n\n\n\n\nWeek One\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nWeek Two Blog\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nRural Grocery Weekly Wrap Up\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 24, 2023\n\n\nAlex Cory\n\n\n\n\n\n\nNo matching items"
+    "text": "Week Three Blog\n\n\n\n\n\n\n\nWeek Three\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nWeek Five Blog\n\n\n\n\n\n\n\nWeek Five\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nRural Grocery Weekly Wrap Up\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 24, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nWeek Two Blog\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 23, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\nWeek One Blog\n\n\n\n\n\n\n\nWeek One\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2023\n\n\nAlex Cory\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -131,5 +131,12 @@
     "title": "Week Three Blog",
     "section": "",
     "text": "Data Exploration\nI spent a lot of time this week doing data exploration. I found the USDA food atlas data set, as well as the Economic Census data. I also explored the TinyUSDA package.\n\n\nClient Meeting\nThis week I met with our clients, where we clarified the scope of the project, discussed the goals moving forwards, and shared our progress. I shared about the USDA food atlas and Economic Census data sets\n\n\nSQL learning\nThis week I spent time learning PostgreSQL on DataCamp. I also did several other courses related to data visualizations and fundamental statistical skills."
+  },
+  {
+    "objectID": "posts/alex_week_five/alex_week_five.html",
+    "href": "posts/alex_week_five/alex_week_five.html",
+    "title": "Week Five Blog",
+    "section": "",
+    "text": "Week Five\nThis Week I spent time researching ways to determine market area. I realized the quarter circle formula was inaccurate for determining market size. I started off learning about Voronoi polygons. After learning about that as a way of finding geographic area, I read sections out of two books, Community Economics by Ron Shaffer and Community Economic Analysis. These had information about something called Reilly’s Law of Gravitation. This is an important metric to consider because it can give an estimation of the reach of grocery stores, and how many people are in the area.\n\n\nVoronoi\n\nggplot(spatial_results, aes(lat, lng)) +\n  stat_voronoi(geom = \"path\") +\n  geom_point(mapping = aes(lat, lng))"
   }
 ]

@@ -1,0 +1,16 @@
+{
+  "hash": "ba50324c8c2b8eb489fe0a741e78ded2",
+  "result": {
+    "markdown": "---\ntitle: \"Week Five Blog\"\nauthor: \"Alex Cory\"\ndate: \"2023-06-1\"\ncategories: [\"Week Five\"]\n---\n\n\n# Week Five\nThis Week I spent time researching ways to determine market area. I realized the quarter circle formula was inaccurate for determining market size. I started off learning about Voronoi polygons. After learning about that as a way of finding geographic area, I read sections out of two books, Community Economics by Ron Shaffer and Community Economic Analysis. These had information about something called Reilly's Law of Gravitation. This is an important metric to consider because it can give an estimation of the reach of grocery stores, and how many people are in the area.\n\n\n# Voronoi\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(spatial_results, aes(lat, lng)) +\n  stat_voronoi(geom = \"path\") +\n  geom_point(mapping = aes(lat, lng))\n```\n\n::: {.cell-output-display}\n![](alex_week_five_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::",
+    "supporting": [
+      "alex_week_five_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
