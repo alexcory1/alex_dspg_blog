@@ -181,7 +181,25 @@ places_multiloc_pull <- function(df, name = NULL,
 
 # Meeting with Duane
 
-We met with Duane this week, and clarified questions we had about the project.
+### Aaron
+
+Duane Johnson, our client, stopped by East Hall Wednesday to answer key questions about our project. I had questions about the source of of some of the figures on the excel sheet that I had been working with, as well as questions regarding the extent our functions should take user input. After Duane answered our questions, the path has become much clearer regarding how to move forward with our project and what our final tool might look like.
+
+One of my questions was about the depreciation sheet that was given to us. We asked whether or not we should provide default values for the assets listed in the calculation sheet in the case that the user did not know these values up front. Duane assured us that these can be purely user inputs and that we should not worry about default values.
+
+Another question concerned the meaning of some of the line items on the sheet, such as "Operating Income (Loss)". We were told that this represented an interim result in the calculation sheet and that this value is not to be forwarded to any other function. Rather, it is there to help us understand the progression of the calculation of pre-tax profit up until that point.
+
+Finally, I asked about the final table on our recently updated excel sheet, which contained unseen columns such as "adv", "repairs" and "tax". Duane told us that this table represented the breakdown of the "Other Operating Expenses" line item on the sheet that we were familiar with. These are just a portion of the questions that were answered in regard to the Estimating Expenses excel sheet. I found our meeting to be highly productive and I have a much clearer idea of the big picture now.
+
+### Srika
+
+Understood why the 2 methods were tried by the client to calculate the per capita grocery spending and planned to go with the simpler one moving forward. Got some clarity about the percent price increase and state index value used in Estimating revenue sheet. So we will use the consumer price index for the percent price increase and rural price parities as the state index as per our discussion with the client.
+
+### Alex
+
+I discussed my findings of the week with Duane, and explained the Voronoi diagrams and Reilly's law.
+
+![](images/IMG_20230614_145708168.jpg)
 
 # Next Week
 
