@@ -97,13 +97,44 @@ get_census_geos <- function(longitude, latitude) {
 
 
 ```
+
 ```{r, message=FALSE, warning= FALSE}
 block_table <- get_census_geos(-93, 42)
 knitr::kable(block_table[1:5,] )
 ```
 
-
 # Srika
+
+```{r, include=FALSE}
+library(readxl)
+dollar_store_data=read_excel("C:/Users/srika/Downloads/salesgenie_dollar_stores.xlsx")
+```
+
+```{r}
+p <- ggplot(data = dollar_store_data, aes(x = Company_Name, fill = Location_Sales_Volume_Range)) +
+            geom_bar(position = "dodge")
+ggplotly(p)
+```
+
+```{r}
+companyname_by_count <- ggplot(data = dollar_store_data, aes(x = Company_Name)) +
+            geom_bar(position = "dodge")
+ggplotly(companyname_by_count)
+```
+
+```{r}
+num_dollar_stores <- dollar_store_data %>%
+  group_by(Mailing_City) %>%
+  summarize(count = n()) %>%
+  filter(count > 1) %>%
+  ggplot(aes(x = Mailing_City, y = count)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+ 
+
+ggplotly(num_dollar_stores)
+```
 
 # Harun
 
@@ -151,3 +182,8 @@ places_multiloc_pull <- function(df, name = NULL,
 }
 
 ```
+
+
+# Conference
+
+![](images/MicrosoftTeams-image.png)
