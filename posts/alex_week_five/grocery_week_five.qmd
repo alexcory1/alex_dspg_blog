@@ -7,6 +7,8 @@ categories: ["Week Five", "Grocery Team"]
 
 # Voronoi Diagrams
 
+Voronoi Diagrams are ways to visualize the regions on a map that are the closest to a given node.
+
 ![](images/440px-Voronoi_growth_euclidean.gif)
 
 ```{r, include=FALSE}
@@ -20,6 +22,7 @@ library(tigris)
 library(revgeo)
 library(DT)
 library(htmlwidgets)
+library(plotly)
 key <- Sys.getenv("GOOGLE_KEY")
 set_key(key = key)
 
@@ -37,15 +40,23 @@ ggplot(spatial_results, aes(lat, lng)) +
   geom_point(mapping = aes(lat, lng))
 ```
 
-# Determining Market Size
+Old Method
+
+![](images/IMG_5336.png)
+
+## Determining Market Size
 
 We looked into the economic methods for evaluating market size. Two metrics we looked into were Reilly's Law of Gravitation and Trade Area Capture. Reilly's law is based on the idea people will tend to shop in areas with a higher population, and the model is based on a ratio between distance and population. Trade area capture uses historical data and income in areas to give a prediction of actual numbers of people who shop in an area.
+
+# Voronoi vs Reilly's Law
+
+Voronoi and Reilly's law can tell us similar, but different things. Voronoi shows the geographic regions where our proposed store would be the closest. Reilly's law would show the regions around our store that people would be willing to travel in order to shop at the store.
 
 # Aaron
 
 This week Aaron worked on creating a function that takes latitude and longitude as inputs and outputs the corresponding Census geographies. So far, we have two: one that's simple and one that is more complex. We are currently working on adjusting them and improving their performance, as well as figuring out how this function fits into the full patchwork of functions for our tool.
 
-```{r}
+```{r, message= FALSE}
 get_census_geos <- function(longitude, latitude) {
   
   API_KEY <- Sys.getenv("GOOGLE_KEY")
@@ -98,43 +109,20 @@ get_census_geos <- function(longitude, latitude) {
 
 ```
 
-```{r, message=FALSE, warning= FALSE}
+```{r, message=FALSE, warning= FALSE, include=FALSE}
 block_table <- get_census_geos(-93, 42)
+
+```
+
+```{r}
 knitr::kable(block_table[1:5,] )
 ```
 
 # Srika
 
-```{r, include=FALSE}
-library(readxl)
-dollar_store_data=read_excel("C:/Users/srika/Downloads/salesgenie_dollar_stores.xlsx")
-```
+![](images/MicrosoftTeams-image-01.png)
 
-```{r}
-p <- ggplot(data = dollar_store_data, aes(x = Company_Name, fill = Location_Sales_Volume_Range)) +
-            geom_bar(position = "dodge")
-ggplotly(p)
-```
-
-```{r}
-companyname_by_count <- ggplot(data = dollar_store_data, aes(x = Company_Name)) +
-            geom_bar(position = "dodge")
-ggplotly(companyname_by_count)
-```
-
-```{r}
-num_dollar_stores <- dollar_store_data %>%
-  group_by(Mailing_City) %>%
-  summarize(count = n()) %>%
-  filter(count > 1) %>%
-  ggplot(aes(x = Mailing_City, y = count)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
- 
-
-ggplotly(num_dollar_stores)
-```
+![](images/MicrosoftTeams-image%20(1).png)
 
 # Harun
 
@@ -183,7 +171,18 @@ places_multiloc_pull <- function(df, name = NULL,
 
 ```
 
-
 # Conference
 
 ![](images/MicrosoftTeams-image.png)
+
+# Miro
+
+![](images/Groceries%20Functions%20Hierarchy.jpg)
+
+# Meeting with Duane
+
+We met with Duane this week, and clarified questions we had about the project.
+
+# Next Week
+
+Next week I plan on looking into how we can incorporate Voronoi diagrams into our leaflet map. The ggvoronoi package we are using does not save a geometry, so we will have to look into how we can map that. I also want to figure out if I can make a map using the Reilly's law, because as is it will just give a single distance as an output.
