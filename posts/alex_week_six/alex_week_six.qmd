@@ -1,0 +1,22 @@
+---
+title: "Week Six Blog"
+author: "Alex Cory"
+date: "2023-06-22"
+categories: ["Week Six"]
+---
+
+# Winvest
+
+This week we went to three cities to gather data for Winvest. We went to Grundy Center, New Hampton, and Independence Iowa. While we were there we took pictures of houses and recorded any defects, as well as looked at the infrastructure. In Independence I looked mostly at the infrastructure, such as the quality and accessibility of the sidewalks, the and presence of drains, streetlights, way finding, and trees.
+
+> Nice House we found in New Hampton Iowa
+
+![](images/MicrosoftTeams-image%20(3).png)
+
+> Not so nice house we found in Independence Iowa
+
+![](images/MicrosoftTeams-image%20(4).png)
+
+# Week 6 Work
+
+We had a short work week this week, but during it I worked on connecting all of the excel functions together. One issue that came up is that we realized that the rural population function had been done incorrectly. I worked using Jay's script he made to make a function that would automatically pull the populations of all the towns in a county, but have had a lot of difficulty getting it to work correctly. Our team also noticed some pretty serious issues with both the scope of the project and the implementation of it, but we have gotten to a much better place now.

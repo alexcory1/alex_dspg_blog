@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "alex_dspg_blog",
     "section": "",
-    "text": "Grocery Team Week Five Wrap Up\n\n\n\n\n\n\n\nWeek Five\n\n\nGrocery Team\n\n\n\n\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Five Blog\n\n\n\n\n\n\n\nWeek Five\n\n\n\n\n\n\n\n\n\n\n\nJun 13, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Three Blog\n\n\n\n\n\n\n\nWeek Three\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRural Grocery Weekly Wrap Up\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 24, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Two Blog\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 23, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek One Blog\n\n\n\n\n\n\n\nWeek One\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2023\n\n\nAlex Cory\n\n\n\n\n\n\nNo matching items"
+    "text": "Week Six Blog\n\n\n\n\n\n\n\nWeek Six\n\n\n\n\n\n\n\n\n\n\n\nJun 22, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n  \n\n\n\n\nGrocery Team Week Five Wrap Up\n\n\n\n\n\n\n\nWeek Five\n\n\nGrocery Team\n\n\n\n\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Five Blog\n\n\n\n\n\n\n\nWeek Five\n\n\n\n\n\n\n\n\n\n\n\nJun 13, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Three Blog\n\n\n\n\n\n\n\nWeek Three\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRural Grocery Weekly Wrap Up\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 24, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Two Blog\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 23, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek One Blog\n\n\n\n\n\n\n\nWeek One\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2023\n\n\nAlex Cory\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -152,5 +152,12 @@
     "title": "Grocery Team Week Five Wrap Up",
     "section": "",
     "text": "Voronoi Diagrams are ways to visualize the regions on a map that are the closest to a given node.\n\n\nggplot(spatial_results, aes(lat, lng)) +\n  stat_voronoi(geom = \"path\") +\n  geom_point(mapping = aes(lat, lng))\n\n\n\n\nOld Method\n\n\n\nWe looked into the economic methods for evaluating market size. Two metrics we looked into were Reilly’s Law of Gravitation and Trade Area Capture. Reilly’s law is based on the idea people will tend to shop in areas with a higher population, and the model is based on a ratio between distance and population. Trade area capture uses historical data and income in areas to give a prediction of actual numbers of people who shop in an area."
+  },
+  {
+    "objectID": "posts/alex_week_six/alex_week_six.html",
+    "href": "posts/alex_week_six/alex_week_six.html",
+    "title": "Week Six Blog",
+    "section": "",
+    "text": "Winvest\nThis week we went to three cities to gather data for Winvest. We went to Grundy Center, New Hampton, and Independence Iowa. While we were there we took pictures of houses and recorded any defects, as well as looked at the infrastructure. In Independence I looked mostly at the infrastructure, such as the quality and accessibility of the sidewalks, the and presence of drains, streetlights, way finding, and trees.\n\nNice House we found in New Hampton Iowa\n\n\n\nNot so nice house we found in Independence Iowa\n\n\n\n\nWeek 6 Work\nWe had a short work week this week, but during it I worked on connecting all of the excel functions together. One issue that came up is that we realized that the rural population function had been done incorrectly. I worked using Jay’s script he made to make a function that would automatically pull the populations of all the towns in a county, but have had a lot of difficulty getting it to work correctly. Our team also noticed some pretty serious issues with both the scope of the project and the implementation of it, but we have gotten to a much better place now."
   }
 ]
