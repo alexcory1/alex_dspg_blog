@@ -5,12 +5,14 @@ date: "2023-06-1"
 categories: ["Week Three"]
 ---
 
-
 # Data Exploration
+
 I spent a lot of time this week doing data exploration. I found the USDA food atlas data set, as well as the Economic Census data. I also explored the TinyUSDA package.
 
 # Client Meeting
+
 This week I met with our clients, where we clarified the scope of the project, discussed the goals moving forwards, and shared our progress. I shared about the USDA food atlas and Economic Census data sets
 
 # SQL learning
+
 This week I spent time learning PostgreSQL on DataCamp. I also did several other courses related to data visualizations and fundamental statistical skills.

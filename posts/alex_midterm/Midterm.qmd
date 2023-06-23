@@ -1,0 +1,35 @@
+---
+title: "Midterm Report"
+author: "Alex Cory"
+date: "2023-06-23"
+categories: ["Midterm"]
+---
+
+
+# Converting Excel
+We converted the Excel functions to R.
+
+
+# Google API
+We used the Google API to find the nearest grocery stores. The API gives us the latitude and longitude of the other stores, which we can use to find the distance between the stores. We can also use these coordinates to generate polygons.
+
+
+# Market Size
+## Quarter Circle
+The quarter circle was the original design in the excel spreadsheet. Quarter circles are very simple to implement, and work by finding the radius to the nearest store and turning it into a quarter circle. The disadvantage of doing it this way is that it is a massive over estimate because it doesn't factor the other store's "sphere of influence" into account. These are essentially a rudimentary version of a Voronoi polygon.
+
+## Voronoi
+Voronoi polygons are a way of breaking up a plane into sections defined by which node of a graph they are closest to. This shows a model where people will go to the closest grocery store purely based on their location. This doesn't take into account anything about the store, and only cares about the location. The pro's of this are that in rural settings, people are most likely going to go to the nearest store. The cons of this are that it ignores factors such as offerings, pricing, and the fact that people tend to go towards more densely populated areas to shop.
+
+
+## Reilley's Law
+Reilly's law of retail gravitation is the idea that people are drawn to shop in areas with denser populations. The formula for Reilly's law is a ratio of distance between cities and the difference in the populations between the two. This is a good model because it takes into account the shopping habits of consumers. The downsides of this model are that it has a lot of limitations, such as the cities having to have relatively similar populations. 
+
+
+# Automation
+## County
+We have census data for the populations of counties, which we can retrieve using TidyCensus.
+## Towns
+Using the script Jay made, we can find the populations of all the towns in a given geometry.
+## Rural
+We are in the process of automating the rural population. We can calculate this by adding up the populations of all the towns in the county and subtracting that from the total number of people in the county.
