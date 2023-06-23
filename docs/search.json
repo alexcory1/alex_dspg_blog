@@ -81,7 +81,7 @@
     "href": "posts/alex_midterm/Midterm.html#quarter-circle",
     "title": "Midterm Report",
     "section": "Quarter Circle",
-    "text": "Quarter Circle\nThe quarter circle was the original design in the excel spreadsheet. Quarter circles are very simple to implement, and work by finding the radius to the nearest store and turning it into a quarter circle. The disadvantage of doing it this way is that it is a massive over estimate because it doesn’t factor the other store’s “sphere of influence” into account. These are essentially a rudimentary version of a Voronoi polygon."
+    "text": "Quarter Circle\nThe quarter circle was the original design in the excel spreadsheet. Quarter circles are very simple to implement, and work by finding the radius to the nearest store and turning it into a quarter circle that we are using as the region of our market share. The disadvantage of doing it this way is that it is a massive over estimate because it doesn’t factor the other store’s “sphere of influence” into account. These are essentially a rudimentary version of a Voronoi polygon."
   },
   {
     "objectID": "posts/alex_midterm/Midterm.html#voronoi",
@@ -91,25 +91,32 @@
     "text": "Voronoi\nVoronoi polygons are a way of breaking up a plane into sections defined by which node of a graph they are closest to. This shows a model where people will go to the closest grocery store purely based on their location. This doesn’t take into account anything about the store, and only cares about the location. The pro’s of this are that in rural settings, people are most likely going to go to the nearest store. The cons of this are that it ignores factors such as offerings, pricing, and the fact that people tend to go towards more densely populated areas to shop."
   },
   {
+    "objectID": "posts/alex_midterm/Midterm.html#section",
+    "href": "posts/alex_midterm/Midterm.html#section",
+    "title": "Midterm Report",
+    "section": "",
+    "text": "Voronoi Polygon demonstration from Wikipedia\n\n\n\n\n\n\n\nVoronoi diagram of grocery stores in Iowa"
+  },
+  {
     "objectID": "posts/alex_midterm/Midterm.html#reilleys-law",
     "href": "posts/alex_midterm/Midterm.html#reilleys-law",
     "title": "Midterm Report",
     "section": "Reilley’s Law",
-    "text": "Reilley’s Law\nReilly’s law of retail gravitation is the idea that people are drawn to shop in areas with denser populations. The formula for Reilly’s law is a ratio of distance between cities and the difference in the populations between the two. This is a good model because it takes into account the shopping habits of consumers. The downsides of this model are that it has a lot of limitations, such as the cities having to have relatively similar populations."
+    "text": "Reilley’s Law\nReilly’s law of retail gravitation is the idea that people are drawn to shop in areas with denser populations. The formula for Reilly’s law is a ratio of distance between cities and the difference in the populations between the two. This is a good model because it takes into account the shopping habits of consumers. The downsides of this model are that it has a lot of limitations, such as the cities having to have relatively similar populations, and it gives an overestimate because it assumes everyone shops locally."
   },
   {
     "objectID": "posts/alex_midterm/Midterm.html#county",
     "href": "posts/alex_midterm/Midterm.html#county",
     "title": "Midterm Report",
     "section": "County",
-    "text": "County\nWe have census data for the populations of counties, which we can retrieve using TidyCensus."
+    "text": "County\nWe have census data for the populations of counties, which we can retrieve using TidyCensus. TidyCensus is a package for R which allows developers to easily get Census data."
   },
   {
     "objectID": "posts/alex_midterm/Midterm.html#towns",
     "href": "posts/alex_midterm/Midterm.html#towns",
     "title": "Midterm Report",
     "section": "Towns",
-    "text": "Towns\nUsing the script Jay made, we can find the populations of all the towns in a given geometry."
+    "text": "Towns\nUsing the script Jay made, we can find the populations of all the towns in a given geometry. Jay’s script uses a package called Tigris, which allows us to see demographic data within a geographic boundary"
   },
   {
     "objectID": "posts/alex_midterm/Midterm.html#rural",

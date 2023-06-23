@@ -147,34 +147,71 @@ ul.task-list li input[type="checkbox"] {
 <h1>Converting Excel</h1>
 <p>We converted the Excel functions to R. I handled converting the determining market size calculations, which figures out how many people would shop at the store.</p>
 </section>
-<section id="google-api" class="level1">
-<h1>Google API</h1>
-<p>We used the Google API to find the nearest grocery stores. The API gives us the latitude and longitude of the other stores, which we can use to find the distance between the stores. We can also use these coordinates to generate polygons.</p>
+<section id="google-maps-api" class="level1">
+<h1>Google Maps API</h1>
+<p>We used the Google Maps API to find the nearest grocery stores. An API is a tool developers provide for other developers that allow them to incorporate their work into other works. The API gives us the latitude and longitude of the other stores, which we can use to find the distance between the stores. We can also use these coordinates to generate polygons.</p>
 </section>
 <section id="market-size" class="level1">
 <h1>Market Size</h1>
 <section id="quarter-circle" class="level2">
 <h2 class="anchored" data-anchor-id="quarter-circle">Quarter Circle</h2>
-<p>The quarter circle was the original design in the excel spreadsheet. Quarter circles are very simple to implement, and work by finding the radius to the nearest store and turning it into a quarter circle. The disadvantage of doing it this way is that it is a massive over estimate because it doesn’t factor the other store’s “sphere of influence” into account. These are essentially a rudimentary version of a Voronoi polygon.</p>
+<p>The quarter circle was the original design in the excel spreadsheet. Quarter circles are very simple to implement, and work by finding the radius to the nearest store and turning it into a quarter circle that we are using as the region of our market share. The disadvantage of doing it this way is that it is a massive over estimate because it doesn’t factor the other store’s “sphere of influence” into account. These are essentially a rudimentary version of a Voronoi polygon.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/IMG_5336.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </section>
 <section id="voronoi" class="level2">
 <h2 class="anchored" data-anchor-id="voronoi">Voronoi</h2>
 <p>Voronoi polygons are a way of breaking up a plane into sections defined by which node of a graph they are closest to. This shows a model where people will go to the closest grocery store purely based on their location. This doesn’t take into account anything about the store, and only cares about the location. The pro’s of this are that in rural settings, people are most likely going to go to the nearest store. The cons of this are that it ignores factors such as offerings, pricing, and the fact that people tend to go towards more densely populated areas to shop.</p>
 </section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"><img src="images/440px-Voronoi_growth_euclidean.gif" class="img-fluid"></h2>
+<blockquote class="blockquote">
+<p>Voronoi Polygon demonstration from Wikipedia</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/unnamed-chunk-2-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>Voronoi diagram of grocery stores in Iowa</p>
+</blockquote>
+</section>
 <section id="reilleys-law" class="level2">
 <h2 class="anchored" data-anchor-id="reilleys-law">Reilley’s Law</h2>
-<p>Reilly’s law of retail gravitation is the idea that people are drawn to shop in areas with denser populations. The formula for Reilly’s law is a ratio of distance between cities and the difference in the populations between the two. This is a good model because it takes into account the shopping habits of consumers. The downsides of this model are that it has a lot of limitations, such as the cities having to have relatively similar populations.</p>
+<p>Reilly’s law of retail gravitation is the idea that people are drawn to shop in areas with denser populations. The formula for Reilly’s law is a ratio of distance between cities and the difference in the populations between the two. This is a good model because it takes into account the shopping habits of consumers. The downsides of this model are that it has a lot of limitations, such as the cities having to have relatively similar populations, and it gives an overestimate because it assumes everyone shops locally.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/reilly.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/reillys-01.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </section>
+</section>
+<section id="voronoi-vs-reillys-law" class="level1">
+<h1>Voronoi vs Reilly’s Law</h1>
+<p>Voronoi and Reilly’s law can tell us similar, but different things. Voronoi shows the geographic regions where our proposed store would be the closest. Reilly’s law would show the regions around our store that people would be willing to travel in order to shop at the store.</p>
+</section>
+<section id="census" class="level1">
+<h1>Census</h1>
+<p>We are able to use census information to get data at various different resolutions, such as state, county, tract, and place. Using this we can generate maps and map regions to do different types of analysis. One example is knowing how many people live in a region between two grocery stores.</p>
 </section>
 <section id="automation" class="level1">
 <h1>Automation</h1>
 <section id="county" class="level2">
 <h2 class="anchored" data-anchor-id="county">County</h2>
-<p>We have census data for the populations of counties, which we can retrieve using TidyCensus.</p>
+<p>We have census data for the populations of counties, which we can retrieve using TidyCensus. TidyCensus is a package for R which allows developers to easily get Census data.</p>
 </section>
 <section id="towns" class="level2">
 <h2 class="anchored" data-anchor-id="towns">Towns</h2>
-<p>Using the script Jay made, we can find the populations of all the towns in a given geometry.</p>
+<p>Using the script Jay made, we can find the populations of all the towns in a given geometry. Jay’s script uses a package called Tigris, which allows us to see demographic data within a geographic boundary</p>
 </section>
 <section id="rural" class="level2">
 <h2 class="anchored" data-anchor-id="rural">Rural</h2>

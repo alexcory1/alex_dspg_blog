@@ -9,33 +9,55 @@ categories: ["Midterm"]
 
 We converted the Excel functions to R. I handled converting the determining market size calculations, which figures out how many people would shop at the store.
 
-# Google API
+# Google Maps API
 
-We used the Google API to find the nearest grocery stores. The API gives us the latitude and longitude of the other stores, which we can use to find the distance between the stores. We can also use these coordinates to generate polygons.
+We used the Google Maps API to find the nearest grocery stores. An API is a tool developers provide for other developers that allow them to incorporate their work into other works. The API gives us the latitude and longitude of the other stores, which we can use to find the distance between the stores. We can also use these coordinates to generate polygons.
 
 # Market Size
 
 ## Quarter Circle
 
-The quarter circle was the original design in the excel spreadsheet. Quarter circles are very simple to implement, and work by finding the radius to the nearest store and turning it into a quarter circle. The disadvantage of doing it this way is that it is a massive over estimate because it doesn't factor the other store's "sphere of influence" into account. These are essentially a rudimentary version of a Voronoi polygon.
+The quarter circle was the original design in the excel spreadsheet. Quarter circles are very simple to implement, and work by finding the radius to the nearest store and turning it into a quarter circle that we are using as the region of our market share. The disadvantage of doing it this way is that it is a massive over estimate because it doesn't factor the other store's "sphere of influence" into account. These are essentially a rudimentary version of a Voronoi polygon.
+
+![](images/IMG_5336.png){fig-align="center"}
 
 ## Voronoi
 
 Voronoi polygons are a way of breaking up a plane into sections defined by which node of a graph they are closest to. This shows a model where people will go to the closest grocery store purely based on their location. This doesn't take into account anything about the store, and only cares about the location. The pro's of this are that in rural settings, people are most likely going to go to the nearest store. The cons of this are that it ignores factors such as offerings, pricing, and the fact that people tend to go towards more densely populated areas to shop.
 
+## ![](images/440px-Voronoi_growth_euclidean.gif)
+
+> Voronoi Polygon demonstration from Wikipedia
+
+![](images/unnamed-chunk-2-1.png){fig-align="center"}
+
+> Voronoi diagram of grocery stores in Iowa
+
 ## Reilley's Law
 
-Reilly's law of retail gravitation is the idea that people are drawn to shop in areas with denser populations. The formula for Reilly's law is a ratio of distance between cities and the difference in the populations between the two. This is a good model because it takes into account the shopping habits of consumers. The downsides of this model are that it has a lot of limitations, such as the cities having to have relatively similar populations.
+Reilly's law of retail gravitation is the idea that people are drawn to shop in areas with denser populations. The formula for Reilly's law is a ratio of distance between cities and the difference in the populations between the two. This is a good model because it takes into account the shopping habits of consumers. The downsides of this model are that it has a lot of limitations, such as the cities having to have relatively similar populations, and it gives an overestimate because it assumes everyone shops locally.
+
+![](images/reilly.jpg){fig-align="center"}
+
+![](images/reillys-01.jpg){fig-align="center"}
+
+# Voronoi vs Reilly's Law
+
+Voronoi and Reilly's law can tell us similar, but different things. Voronoi shows the geographic regions where our proposed store would be the closest. Reilly's law would show the regions around our store that people would be willing to travel in order to shop at the store.
+
+# Census
+
+We are able to use census information to get data at various different resolutions, such as state, county, tract, and place. Using this we can generate maps and map regions to do different types of analysis. One example is knowing how many people live in a region between two grocery stores.
 
 # Automation
 
 ## County
 
-We have census data for the populations of counties, which we can retrieve using TidyCensus.
+We have census data for the populations of counties, which we can retrieve using TidyCensus. TidyCensus is a package for R which allows developers to easily get Census data.
 
-## Towns 
+## Towns
 
-Using the script Jay made, we can find the populations of all the towns in a given geometry.
+Using the script Jay made, we can find the populations of all the towns in a given geometry. Jay's script uses a package called Tigris, which allows us to see demographic data within a geographic boundary
 
 ## Rural
 
