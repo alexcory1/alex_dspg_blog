@@ -7,7 +7,7 @@ categories: ["Midterm"]
 
 
 # Converting Excel
-We converted the Excel functions to R.
+We converted the Excel functions to R. I handled converting the determining market size calculations, which figures out how many people would shop at the store.
 
 
 # Google API

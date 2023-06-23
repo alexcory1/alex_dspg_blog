@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "alex_dspg_blog",
     "section": "",
-    "text": "Week Six Blog\n\n\n\n\n\n\n\nWeek Six\n\n\n\n\n\n\n\n\n\n\n\nJun 22, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n  \n\n\n\n\nGrocery Team Week Five Wrap Up\n\n\n\n\n\n\n\nWeek Five\n\n\nGrocery Team\n\n\n\n\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Five Blog\n\n\n\n\n\n\n\nWeek Five\n\n\n\n\n\n\n\n\n\n\n\nJun 13, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Three Blog\n\n\n\n\n\n\n\nWeek Three\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRural Grocery Weekly Wrap Up\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 24, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Two Blog\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 23, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek One Blog\n\n\n\n\n\n\n\nWeek One\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2023\n\n\nAlex Cory\n\n\n\n\n\n\nNo matching items"
+    "text": "Midterm Report\n\n\n\n\n\n\n\nMidterm\n\n\n\n\n\n\n\n\n\n\n\nJun 23, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n  \n\n\n\n\nWeek Six Blog\n\n\n\n\n\n\n\nWeek Six\n\n\n\n\n\n\n\n\n\n\n\nJun 22, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n  \n\n\n\n\nGrocery Team Week Five Wrap Up\n\n\n\n\n\n\n\nWeek Five\n\n\nGrocery Team\n\n\n\n\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Five Blog\n\n\n\n\n\n\n\nWeek Five\n\n\n\n\n\n\n\n\n\n\n\nJun 13, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Three Blog\n\n\n\n\n\n\n\nWeek Three\n\n\n\n\n\n\n\n\n\n\n\nJun 1, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRural Grocery Weekly Wrap Up\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 24, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek Two Blog\n\n\n\n\n\n\n\nWeek Two\n\n\n\n\n\n\n\n\n\n\n\nMay 23, 2023\n\n\nAlex Cory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek One Blog\n\n\n\n\n\n\n\nWeek One\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2023\n\n\nAlex Cory\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -159,5 +159,40 @@
     "title": "Week Six Blog",
     "section": "",
     "text": "Winvest\nThis week we went to three cities to gather data for Winvest. We went to Grundy Center, New Hampton, and Independence Iowa. While we were there we took pictures of houses and recorded any defects, as well as looked at the infrastructure. In Independence I looked mostly at the infrastructure, such as the quality and accessibility of the sidewalks, the and presence of drains, streetlights, way finding, and trees.\n\nNice House we found in New Hampton Iowa\n\n\n\nNot so nice house we found in Independence Iowa\n\n\n\n\nWeek 6 Work\nWe had a short work week this week, but during it I worked on connecting all of the excel functions together. One issue that came up is that we realized that the rural population function had been done incorrectly. I worked using Jay’s script he made to make a function that would automatically pull the populations of all the towns in a county, but have had a lot of difficulty getting it to work correctly. Our team also noticed some pretty serious issues with both the scope of the project and the implementation of it, but we have gotten to a much better place now."
+  },
+  {
+    "objectID": "posts/alex_midterm/Midterm.html",
+    "href": "posts/alex_midterm/Midterm.html",
+    "title": "Midterm Report",
+    "section": "",
+    "text": "We converted the Excel functions to R. I handled converting the"
+  },
+  {
+    "objectID": "posts/alex_midterm/Midterm.html#quarter-circle",
+    "href": "posts/alex_midterm/Midterm.html#quarter-circle",
+    "title": "Midterm Report",
+    "section": "Quarter Circle",
+    "text": "Quarter Circle\nThe quarter circle was the original design in the excel spreadsheet. Quarter circles are very simple to implement, and work by finding the radius to the nearest store and turning it into a quarter circle. The disadvantage of doing it this way is that it is a massive over estimate because it doesn’t factor the other store’s “sphere of influence” into account. These are essentially a rudimentary version of a Voronoi polygon."
+  },
+  {
+    "objectID": "posts/alex_midterm/Midterm.html#voronoi",
+    "href": "posts/alex_midterm/Midterm.html#voronoi",
+    "title": "Midterm Report",
+    "section": "Voronoi",
+    "text": "Voronoi\nVoronoi polygons are a way of breaking up a plane into sections defined by which node of a graph they are closest to. This shows a model where people will go to the closest grocery store purely based on their location. This doesn’t take into account anything about the store, and only cares about the location. The pro’s of this are that in rural settings, people are most likely going to go to the nearest store. The cons of this are that it ignores factors such as offerings, pricing, and the fact that people tend to go towards more densely populated areas to shop."
+  },
+  {
+    "objectID": "posts/alex_midterm/Midterm.html#reilleys-law",
+    "href": "posts/alex_midterm/Midterm.html#reilleys-law",
+    "title": "Midterm Report",
+    "section": "Reilley’s Law",
+    "text": "Reilley’s Law\nReilly’s law of retail gravitation is the idea that people are drawn to shop in areas with denser populations. The formula for Reilly’s law is a ratio of distance between cities and the difference in the populations between the two. This is a good model because it takes into account the shopping habits of consumers. The downsides of this model are that it has a lot of limitations, such as the cities having to have relatively similar populations."
+  },
+  {
+    "objectID": "posts/alex_midterm/Midterm.html#county",
+    "href": "posts/alex_midterm/Midterm.html#county",
+    "title": "Midterm Report",
+    "section": "County",
+    "text": "County\nWe have census data for the populations of counties, which we can retrieve using TidyCensus. ## Towns Using the script Jay made, we can find the populations of all the towns in a given geometry. ## Rural We are in the process of automating the rural population. We can calculate this by adding up the populations of all the towns in the county and subtracting that from the total number of people in the county."
   }
 ]
