@@ -1,0 +1,10 @@
+---
+title: "Week Seven"
+author: "Alex Cory"
+date: "2023-06-29"
+categories: ["Week Seven"]
+---
+
+# Week Seven
+
+Week Seven was all about automation. I spent a ton of time parsing strings and doing data wrangling in order to automate tasks. I started this week completing the automation for the rural population function. When I was making the rural population function I realized a ton of the code I need for it will be used in other functions, which led me to make the Pop_Binder function, which creates a new data frame from an address with the populations for all the cities in the county. This is based on work I did last week and work from Jay Maxwell. The big change in this function was that I went from giving it a town name to giving it an address. Dealing with addresses caused me to make a function for parsing Google Maps addresses. This function will be used by both Harun and me. Both Pop_Binder and Address_Parser will likely be used in an initialization function that will run before the rest of the toolkit and save as a global variable. I also worked on the Distance_Test file, which is an RMD file that I am using to figure out how to automate the Pct_County function. This function needs to convert from GPS to UTM coordinates because they are a more useful form because they are an actual distance measurement. Lastly I made the Metro Population function, which returns the population of the city that the address is in. This is used in one of Srika's functions.

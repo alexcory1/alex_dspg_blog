@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alex Cory">
-<meta name="dcterms.date" content="2023-06-23">
+<meta name="dcterms.date" content="2023-06-29">
 
-<title>alex_dspg_blog - Midterm Report</title>
+<title>alex_dspg_blog - Week Seven</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,9 +105,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Midterm Report</h1>
+      <h1 class="title">Week Seven</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Midterm</div>
+                <div class="quarto-category">Week Seven</div>
               </div>
                   </div>
   </div>
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 23, 2023</p>
+        <p class="date">June 29, 2023</p>
       </div>
     </div>
     
@@ -143,82 +143,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="converting-excel" class="level1">
-<h1>Converting Excel</h1>
-<p>We converted the Excel functions to R. I handled converting the determining market size calculations, which figures out how many people would shop at the store.</p>
-</section>
-<section id="google-maps-api" class="level1">
-<h1>Google Maps API</h1>
-<p>We used the Google Maps API to find the nearest grocery stores. An API is a tool developers provide for other developers that allow them to incorporate their work into other works. The API gives us the latitude and longitude of the other stores, which we can use to find the distance between the stores. We can also use these coordinates to generate polygons.</p>
-</section>
-<section id="market-size" class="level1">
-<h1>Market Size</h1>
-<section id="quarter-circle" class="level2">
-<h2 class="anchored" data-anchor-id="quarter-circle">Quarter Circle</h2>
-<p>The quarter circle was the original design in the excel spreadsheet. Quarter circles are very simple to implement, and work by finding the radius to the nearest store and turning it into a quarter circle that we are using as the region of our market share. The disadvantage of doing it this way is that it is a massive over estimate because it doesn’t factor the other store’s “sphere of influence” into account. These are essentially a rudimentary version of a Voronoi polygon.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/IMG_5336.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="voronoi" class="level2">
-<h2 class="anchored" data-anchor-id="voronoi">Voronoi</h2>
-<p>Voronoi polygons are a way of breaking up a plane into sections defined by which node of a graph they are closest to. This shows a model where people will go to the closest grocery store purely based on their location. This doesn’t take into account anything about the store, and only cares about the location. The pro’s of this are that in rural settings, people are most likely going to go to the nearest store. The cons of this are that it ignores factors such as offerings, pricing, and the fact that people tend to go towards more densely populated areas to shop.</p>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"><img src="images/440px-Voronoi_growth_euclidean.gif" class="img-fluid"></h2>
-<blockquote class="blockquote">
-<p>Voronoi Polygon demonstration from Wikipedia</p>
-</blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/unnamed-chunk-2-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<blockquote class="blockquote">
-<p>Voronoi diagram of grocery stores in Iowa</p>
-</blockquote>
-</section>
-<section id="reilleys-law" class="level2">
-<h2 class="anchored" data-anchor-id="reilleys-law">Reilley’s Law</h2>
-<p>Reilly’s law of retail gravitation is the idea that people are drawn to shop in areas with denser populations. The formula for Reilly’s law is a ratio of distance between cities and the difference in the populations between the two. This is a good model because it takes into account the shopping habits of consumers. The downsides of this model are that it has a lot of limitations, such as the cities having to have relatively similar populations, and it gives an overestimate because it assumes everyone shops locally.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/reilly.jpg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/reillys-01.jpg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</section>
-</section>
-<section id="voronoi-vs-reillys-law" class="level1">
-<h1>Voronoi vs Reilly’s Law</h1>
-<p>Voronoi and Reilly’s law can tell us similar, but different things. Voronoi shows the geographic regions where our proposed store would be the closest. Reilly’s law would show the regions around our store that people would be willing to travel in order to shop at the store.</p>
-</section>
-<section id="census" class="level1">
-<h1>Census</h1>
-<p>We are able to use census information to get data at various different resolutions, such as state, county, tract, and place. Using this we can generate maps and map regions to do different types of analysis. One example is knowing how many people live in a region between two grocery stores.</p>
-</section>
-<section id="automation" class="level1">
-<h1>Automation</h1>
-<section id="county" class="level2">
-<h2 class="anchored" data-anchor-id="county">County</h2>
-<p>We have census data for the populations of counties, which we can retrieve using TidyCensus. TidyCensus is a package for R which allows developers to easily get Census data.</p>
-</section>
-<section id="towns" class="level2">
-<h2 class="anchored" data-anchor-id="towns">Towns</h2>
-<p>Using the script Jay made, we can find the populations of all the towns in a given geometry. Jay’s script uses a package called Tigris, which allows us to see demographic data within a geographic boundary. Jay’s script has functions that allow you to give a latitude, longitude, and state, and it will return the city name. You can also give it a county and have it return all the towns in that county.</p>
-</section>
-<section id="rural" class="level2">
-<h2 class="anchored" data-anchor-id="rural">Rural</h2>
-<p>We are in the process of automating the rural population. We can calculate this by adding up the populations of all the towns in the county and subtracting that from the total number of people in the county.</p>
+<section id="week-seven" class="level1">
+<h1>Week Seven</h1>
+<p>Week Seven was all about automation. I spent a ton of time parsing strings and doing data wrangling in order to automate tasks. I started this week completing the automation for the rural population function. When I was making the rural population function I realized a ton of the code I need for it will be used in other functions, which led me to make the Pop_Binder function, which creates a new data frame from an address with the populations for all the cities in the county. This is based on work I did last week and work from Jay Maxwell. The big change in this function was that I went from giving it a town name to giving it an address. Dealing with addresses caused me to make a function for parsing Google Maps addresses. This function will be used by both Harun and me. Both Pop_Binder and Address_Parser will likely be used in an initialization function that will run before the rest of the toolkit and save as a global variable. I also worked on the Distance_Test file, which is an RMD file that I am using to figure out how to automate the Pct_County function. This function needs to convert from GPS to UTM coordinates because they are a more useful form because they are an actual distance measurement. Lastly I made the Metro Population function, which returns the population of the city that the address is in. This is used in one of Srika’s functions.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
