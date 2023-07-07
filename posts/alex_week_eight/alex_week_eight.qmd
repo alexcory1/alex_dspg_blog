@@ -43,14 +43,13 @@ categories: ["Week Eight"]
 
 -   Standardize documentation with roxygen following a style guide
 
-
 # Final Project Presentation Outline
 
 We created our YouTube Trailer video for our project this week and also made a rough outline for the final project presentation. We are planning to divide our final presentations into 4 sections:
 
-#### Introduction(Harun)
+#### Introduction(Harun) 
 
--   Project Overview:
+-   Project Overview: (5 minutes)
 
     -   Summary
 
@@ -58,7 +57,7 @@ We created our YouTube Trailer video for our project this week and also made a r
 
     -   The Excel tool
 
--   Literature Review & Data Collection:
+-   Literature Review & Data Collection: (3 minutes)
 
     -   Reading on Rural Grocery Stores
 
@@ -68,7 +67,7 @@ We created our YouTube Trailer video for our project this week and also made a r
 
 -   **Market Size Calculation** (Alex)
 
-    -   Market area calculation
+    -   Market area calculation (6 minutes)
 
         -   Quarter Circle 
 
@@ -76,7 +75,7 @@ We created our YouTube Trailer video for our project this week and also made a r
 
         -   Reillys 
 
-    -   Population
+    -   Population (5 minutes)
 
         -   Rural Population
 
@@ -86,9 +85,9 @@ We created our YouTube Trailer video for our project this week and also made a r
 
 -   **Revenue Estimation** (Srika)
 
-    -   Average Grocery Spend  
+    -   Average Grocery Spending  
 
-    -   State index and percentage price index: 
+    -   State index and percentage price index: (4 minutes)
 
         -   Rural price parities(RUPP) 
 
@@ -96,11 +95,11 @@ We created our YouTube Trailer video for our project this week and also made a r
 
         -   Update and Maintenance
 
-    -   Money spent by different categories of shoppers 
+    -   Money spent by different categories of shoppers (3 minutes)
 
-    -   Market trends 
+    -   Market trends (1 minute)
 
-    -   Visualization: 
+    -   Visualization: (4 minutes)
 
         -   Non-Chain grocery store, Chain grocery store, Dollar store distribution 
 
@@ -110,7 +109,7 @@ We created our YouTube Trailer video for our project this week and also made a r
 
 -   **Expense Estimation** (Aaron)
 
-    -   Expenses for Opening a Store 
+    -   Expenses for Opening a Store (5 minutes)
 
         -   Cost of Goods Sold 
 
@@ -122,13 +121,13 @@ We created our YouTube Trailer video for our project this week and also made a r
 
         -   Rent 
 
-    -   Secondary Sources of Income 
+    -   Secondary Sources of Income (3 minutes)
 
         -   Income from interest 
 
         -   Other income 
 
-    -   User-defined Inputs 
+    -   User-defined Inputs (3 minutes)
 
         -   Switching between multiple ownership scenarios 
 
@@ -138,12 +137,12 @@ We created our YouTube Trailer video for our project this week and also made a r
 
         -   Custom loan and rent
 
-    -   Pre-Tax Profit Calculation
+    -   Pre-Tax Profit Calculation (2 minutes)
 
--   **Design Choices** (Harun)
+-   **Design Choices** (Harun) (4 minutes)
 
-#### Results (Harun)
+#### Results (Harun) 
 
--   Dashboard Demo
+-   Dashboard Demo (3 minutes)
 
 #### Conclusion
