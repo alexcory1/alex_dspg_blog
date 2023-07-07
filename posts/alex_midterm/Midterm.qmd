@@ -57,7 +57,7 @@ We have census data for the populations of counties, which we can retrieve using
 
 ## Towns
 
-Using the script Jay made, we can find the populations of all the towns in a given geometry. Jay's script uses a package called Tigris, which allows us to see demographic data within a geographic boundary. Jay's script has functions that allow you to give a latitude, longitude, and state, and it will return the city name. You can also give it a county and have it return all the towns in that county. 
+Using the script Jay made, we can find the populations of all the towns in a given geometry. Jay's script uses a package called Tigris, which allows us to see demographic data within a geographic boundary. Jay's script has functions that allow you to give a latitude, longitude, and state, and it will return the city name. You can also give it a county and have it return all the towns in that county.
 
 ## Rural
 

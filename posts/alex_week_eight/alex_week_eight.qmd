@@ -1,0 +1,44 @@
+---
+title: "Grocery Week Eight"
+author: "Alex Cory"
+date: "2023-07-07"
+categories: ["Week Eight"]
+---
+
+# Progress
+
+-   Finished automation on market area calculations
+
+-   Figured out quarter circle, got a direction from lat long coordinates
+
+-   Made and improved visualizations for final product and presentation
+
+    -   Plots from SalesGenie data to show revenue for grocery stores of different sizes and city classifications
+
+    -   Worked on the map for final project
+
+-   Started work on vignettes
+
+-   Made interactive data tables
+
+-   Finalized Shiny UI
+
+    ## Quarter Circle Map
+
+    ## ![](images/shiny_map.png)
+
+## Flowchart
+
+![](images/flowchart.png)
+
+## Language 
+
+![](images/lang_graph.png)
+
+# Going forward
+
+-   Finish putting everything together so it works as one cohesive function
+
+-   Fix any issues left, check math on calculations
+
+-   Standardize documentation
