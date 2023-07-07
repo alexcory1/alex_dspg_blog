@@ -74,7 +74,7 @@
     "href": "posts/alex_week_eight/alex_week_eight.html",
     "title": "Grocery Week Eight",
     "section": "",
-    "text": "Finished automation on market area calculations\nFigured out quarter circle, got a direction from lat long coordinates\nMade and improved visualizations for final product and presentation\n\nPlots from SalesGenie data to show revenue for grocery stores of different sizes and city classifications\nWorked on the map for final project\n\nStarted work on vignettes\nMade interactive data tables\nFinalized Shiny UI"
+    "text": "Finished automation on market area calculations\nFigured out quarter circle method for determining the market area, got a direction from lat long coordinates\nMade and improved visualizations for final product and presentation\n\nPlots from SalesGenie data to show revenue for grocery stores of different sizes and city classifications\nWorked on the map for final project\n\nStarted work on vignettes\nMade interactive data tables\nFinalized Shiny UI"
   },
   {
     "objectID": "posts/alex_week_one/week_one.html",
