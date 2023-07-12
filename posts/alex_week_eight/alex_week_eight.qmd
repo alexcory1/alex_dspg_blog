@@ -47,7 +47,7 @@ categories: ["Week Eight"]
 
 We created our YouTube Trailer video for our project this week and also made a rough outline for the final project presentation. We are planning to divide our final presentations into 4 sections:
 
-#### Introduction(Harun) 
+#### Introduction(Harun)
 
 -   Project Overview: (5 minutes)
 
@@ -141,7 +141,7 @@ We created our YouTube Trailer video for our project this week and also made a r
 
 -   **Design Choices** (Harun) (4 minutes)
 
-#### Results (Harun) 
+#### Results (Harun)
 
 -   Dashboard Demo (3 minutes)
 
