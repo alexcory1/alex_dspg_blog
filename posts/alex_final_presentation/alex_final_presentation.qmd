@@ -8,19 +8,19 @@ The estimating market size section is broken down into three main components: me
 
 ### Metro Population
 
-Metro Population is a function that determines the population of the city that the potential store would be in. This function uses the parsed address to select just the city the store is out of a data frame containing the population of all the towns in the county that the store is in.
+Metro Population is the population of the city that the potential store would be in. This function uses the parsed address to select just the city the store is out of a data frame containing the population of all the towns in the county that the store is in.
 
 ### Cities Population
 
-Cities Population is a function that finds all the nearby cities and finds the total of their populations. This function uses a TidyCensus call to find the population of all the cities in the state, and then filters it down to be just the cities in our area. It then takes the sum of all the city populations.
+Cities Population is all the nearby cities populations. This function uses a TidyCensus call to find the population of all the cities in the state, and then filters it down to be just the cities in our area. It then takes the sum of all the city populations to determine how many people are in nearby towns.
 
 ### Rural Population
 
-Rural_Pop is a function that finds the population of all people who live in the market area but do not live in a town. This is done by finding the population of the whole county, and subtracting the people who live in all the towns in that area, then multiplying by the percentage of the county the area covers.
+Rural Population is the population of all people who live in the market area but do not live in a town. This is calculated by finding the population of the whole county, and subtracting the people who live in all the towns in that area, then multiplying by the percentage of the county the area covers.
 
 ## Market Area
 
-The area calculations used in our functions are derived by finding the distance to the nearest store in each quadrant (NE, NW, SE, SW). We divide that distance by two to account for the other store's market area, then we use that distance as the radius of a quarter circle to figure out how much reach the store has. A more elegant solution to this would be Voronoi polygons, Reilly's law of Retail Gravitation, or Huff's Model.
+The area calculations used in our functions are derived by finding the distance to the nearest store in each quadrant (NE, NW, SE, SW). We divide that distance by two to account for the other store's market area, then we use that distance as the radius of a quarter circle to figure out how much reach the store has. A more elegant solution to this would be Voronoi polygons, Reilly's Law of Retail Gravitation, or Huff's Model.
 
 ## Future potential steps
 
